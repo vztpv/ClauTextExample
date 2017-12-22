@@ -1,0 +1,13 @@
+
+Main = {
+	$call = { id = example1 }
+}
+
+Event = {
+	id = example1
+	
+	$print = { data = { "Hello World" } }
+	$print = { enter = { \n } } 
+	
+	$_getch = { } # only for stop!
+}

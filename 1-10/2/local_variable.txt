@@ -1,0 +1,19 @@
+
+Main = {
+	$call = { id = example2 }
+}
+
+Event = {
+	id = example2
+	
+	$local = { x y z }
+	
+	$assign = { $local.x value = { 1 } }
+	$assign = { $local.y value = { 2 } }
+	$assign = { $local.z value = { $add = { $local.x $local.y } } }
+	
+	$print = { data = { $local.z } }
+	$print = { enter = { \n } }
+	
+	$_getch = { } # only for stop!
+}
