@@ -1,0 +1,21 @@
+
+data = {
+	x = 2
+	y = 3
+	z = 0
+}
+
+Main = {
+	$call = { id = example3_2 }
+}
+
+Event = {
+	id = example3_2
+	
+	$assign = { /data/z value = { $add = { /data/x /data/y } } }
+	
+	$print = { data = { /data/z } }
+	$print = { enter = { \n } }
+	
+	$_getch = { } # only for stop!
+}
