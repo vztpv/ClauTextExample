@@ -1,0 +1,46 @@
+
+# line comment
+
+# float op float ok!
+# int op int ok!
+# float op int or int op float => error!
+
+# float op float => float => string!
+
+Main = {
+	$call = { id = example4 }
+}
+
+a = 3
+b = 4
+c = 3.0 # type of 3.0 != type of 3 
+		# type of 3.0 is long double, type of 3 is long long
+d = 4.5 
+
+Event = {
+	id = example4
+	
+	$print = { data = { $add = { /./a /./b } } }
+	$print = { enter = { \n } }
+	$print = { data = { $add = { /./a $multiple = { -1 /./b } } } }
+	$print = { enter = { \n } }
+	$print = { data = { $multiple = { /./a /./b } } }
+	$print = { enter = { \n } }
+	$print = { data = { $divide = { /./a /./b } } }
+	$print = { enter = { \n } }
+	$print = { data = { $modular = { /./a /./b } } }
+	$print = { enter = { \n } }
+	
+	$print = { data = { $add = { /./c /./d } } }
+	$print = { enter = { \n } }
+	$print = { data = { $add = { /./c $multiple = { -1.0 /./d } } } } 
+												# -1 then error!
+	$print = { enter = { \n } }
+	$print = { data = { $multiple = { /./c /./d } } }
+	$print = { enter = { \n } }
+	$print = { data = { $divide = { /./c /./d } } }
+	$print = { enter = { \n } }
+	
+	
+	$_getch = { } # only for stop!
+}

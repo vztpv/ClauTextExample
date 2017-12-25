@@ -1,0 +1,27 @@
+
+
+Main = {
+	$call = { id = example5 }
+}
+
+Event = {
+	id = example5
+	
+	
+	$if = {
+		condition = { $COMP< = { $add = { 3 4 } 5 } }
+		then = {
+			$print = { data = { "3 + 4  < 5 " } }
+			$print = { enter = { \n } }
+		}
+	}
+	$else = {
+		then = {
+			$print = { data = { "3 + 4  >= 5 " } }
+			$print = { enter = { \n } }			
+		}
+	}
+
+	
+	$_getch = { } # only for stop!
+}
