@@ -1,0 +1,26 @@
+
+Main = {
+	$call = { id = example6 }
+}
+
+Event = {
+	id = example6
+	
+	$local = { i sum }
+	
+	$assign = { $local.i data = { 0 } }
+	$assign = { $local.sum data = { 0 } }
+	
+	$while = {
+		condition = { $COMP<EQ = { $local.i 100 } }
+		then = {
+			$assign = { $local.sum data = { $add = { $local.sum $local.i } } }
+			$assign = { $local.i data = { $add = { $local.i 1 } } }
+		}
+	}
+	
+	$print = { data = { $local.sum } }
+	$print = { enter = { \n } }
+	
+	$_getch = { }
+}

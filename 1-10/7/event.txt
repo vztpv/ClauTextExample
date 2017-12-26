@@ -1,0 +1,33 @@
+
+Main = {
+	$call = { id = example7 }
+}
+
+Event = {
+	id = example7
+	
+	# $return_value =>     # default : empty string?
+	$call = { id = 2 x = 1 y = 2 z = { $add = { 1 2 } } } 
+	# $return_value => wow
+	$call = { id = 1 } # no return
+	# $return_value => wow
+	
+	$print = { data = { $return_value = { } } }
+	$print = { enter = { \n } }
+	
+	$_getch = { }
+}
+
+Event = {
+	id = 1
+	
+}
+
+Event = {
+	id = 2
+	
+	$parameter = { x y z }
+	
+	$return = { $add = { $parameter.x $add = { $parameter.y $parameter.z } } }
+}
+
