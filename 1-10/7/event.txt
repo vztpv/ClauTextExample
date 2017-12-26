@@ -8,9 +8,9 @@ Event = {
 	
 	# $return_value =>     # default : empty string?
 	$call = { id = 2 x = 1 y = 2 z = { $add = { 1 2 } } } 
-	# $return_value => wow
+	# $return_value => 6
 	$call = { id = 1 } # no return
-	# $return_value => wow
+	# $return_value => 6
 	
 	$print = { data = { $return_value = { } } }
 	$print = { enter = { \n } }
