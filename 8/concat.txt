@@ -1,0 +1,45 @@
+
+name = x
+
+x = 1
+x = {
+	y = 3 z = 4 
+	1 = {
+		abc 
+		def
+		ghi
+	}
+}
+
+Main = {
+	$call = { id = example8 }
+}
+
+Event = {
+	id = example8
+
+	$call = { id = { $concat = { x 2 } } }
+	
+	$_getch = { }
+}
+
+Event = {
+	id = x2
+	
+	$local = { x a }
+	#$print2 = { dir = { /./x } } #error?
+	#/./x => 1 
+	#$print2 = { dir = { /./x } } => $print2 = { dir = { 1 } } # don`t work?
+	$print2 = { dir = { $concat_all = { / . / x } } } # $concat_all is used oftenly. 
+	$print = { enter = { \n } }
+	
+	$assign = { $local.x data = { $concat_all = { / . / x } } } 
+	#$assign = { /./name data = { $concat_all = { / . / x } } }
+	$print2 = { dir = { $concat_all = { $local.x	/ 1 } } }
+	$print = { enter = { \n } }
+	
+	$assign = { $local.a data = { 3 } }
+	$insert = { dir = { $local.x } data = { a = { $local.a 3 b = { $local.a = 4 } } } }
+	
+	$print2 = { dir = { $local.x } }
+}
