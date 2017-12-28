@@ -1,0 +1,12 @@
+
+Main = {
+	$call = { id = example9 }
+}
+
+Event = {
+	id = example9
+	
+	$print = { data = { $rand = { 1 10 } } }
+	
+	$_getch = { }
+}
