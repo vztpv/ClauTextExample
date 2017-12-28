@@ -1,0 +1,98 @@
+
+x = { a = 1 }
+x = { b = 3 }
+y = { c = 3 }
+y = { d = 4 }
+
+
+Main = { 
+	$call = { id = example11 }
+}
+
+Event = {
+	id = example11
+		
+	$print2 = { data = { /./x } }	
+	$print = { enter = { \n } }
+	
+	$print = { enter = { \n } }
+	
+	$print2 = { data = { /./y } }	
+	$print = { enter = { \n } }
+	
+	$print = { enter = { \n } }
+	
+	$print2 = { data = { /./$ } }
+	$print = { enter = { \n } }
+	$print = { enter = { \n } }
+	
+	
+	$call = { id = example11_2 }
+	
+	
+	$_getch = { }
+}
+
+# some? part of EU4 savegame
+provinces={
+	-1={
+		name="Stokholm"
+		state=yes
+		owner="DAN"
+		controller="DAN"
+		previous_controller="DAN"
+		seat_in_parliament={
+			bribe="lose_navy_tradition"
+		}
+		institutions={
+			100.000 100.000 100.000 100.000 100.000 100.000 100.000 
+		}
+		core="SWE"
+		core="DAN"
+		trade="baltic_sea"
+		unit={
+			id=1156126
+			type=4713
+		}
+		culture=swedish
+		religion=protestant
+		original_religion=catholic
+		capital="Stockholm"
+		is_city=yes
+		garrison=10000.000
+		base_tax=9.000
+		original_tax=13.000
+		#omitted
+	}
+	-2={
+		name="ٳter-G𴬡nd"
+		state=yes
+		owner="DAN"
+		controller="DAN"
+		previous_controller="SWE"
+		institutions={
+			100.000 100.000 100.000 100.000 100.000 100.000 100.000 
+		}
+		estate=1
+		last_estate_grant=1731.1.3
+		core="SWE"
+		core="DAN"
+		trade="baltic_sea"
+		culture=swedish
+		religion=protestant
+		original_religion=catholic
+		capital="Link򰩮g"
+		is_city=yes
+		base_tax=4.000
+		original_tax=8.000
+		#omitted
+	}
+}
+
+# practical? usage of $  ( here $ means all )
+Event = {
+	id = example11_2
+	
+	$print = { data = { /./provinces/$/name } }
+	$print = { enter = { \n } }
+}
