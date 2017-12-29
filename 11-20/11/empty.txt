@@ -1,0 +1,21 @@
+
+Main = {
+	$call = { id = example11 }
+}
+
+x 
+{
+	y = 3
+	z
+}
+
+
+Event = {
+	id = example11
+	
+	$print = { data = { /./_/y } }
+	$print = { enter = { \n } }
+	
+	$_getch = { }
+}
+
