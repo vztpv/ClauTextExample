@@ -1,0 +1,24 @@
+
+Main = { 
+	$call = { id = example14 }
+}
+
+x = 1
+x = { 
+	 y = 3
+	 y = {
+		z = 1 z = 2 z = 3
+	 }
+}
+
+Event = {
+	id = example14
+	
+	$print = { data = { /./x/y/$it1 } }
+	$print = { enter = { \n } }
+	
+	$print = { data = { /./$ut0/$ut0/$it1 } }
+	$print = { enter = { \n } }
+	
+	$_getch = { }
+}

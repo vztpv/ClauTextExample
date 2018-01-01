@@ -1,0 +1,36 @@
+
+Main = { 
+	$call = { id = example13 }
+}
+
+x = 1
+x = { 
+	 y = 3
+	 y = {
+		z = 1 z = 2 z = 3
+	 }
+}
+
+Event = {
+	id = example13
+	
+	$print = { data = { /./x/y } }
+	$print = { enter = { \n }  }
+						# $get : /~ or $local.~ or $paramter.~
+	$print = { data = { $get = { $concat_all = { / . / x / y } } } }
+	$print = { enter = { \n } }
+	
+	
+	$_getch = { }
+}
+
+
+
+
+
+
+
+
+
+
+

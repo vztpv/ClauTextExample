@@ -1,0 +1,25 @@
+
+Main = {
+	$call = { id = example12 }
+}
+
+3
+
+x = 1
+{ # x = 
+	y = 5
+	y = 4
+}
+
+Event = {
+	id = example12 
+	
+	$cond = { 
+		EQ = { 5 ~ y @/./_ 1 } # 0 - 1 : 1, 1 - any, 2 - all
+	}
+	
+	$print = { data = { $return_value = { } } }
+	$print = { enter = { \n } }
+	
+	$_getch = { }
+}
